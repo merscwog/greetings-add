@@ -9,10 +9,10 @@ name: Simple Pipe
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "debug" ]
   pull_request:
     types: [opened, synchronized, reopened]
-    branches: [ "main" ]
+    branches: [ "debug" ]
   workflow_dispatch:
     inputs:
       myVersion:
