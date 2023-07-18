@@ -79,9 +79,11 @@ jobs:
         
      - name: Execute test
        shell: bash
-       run: |
+       env:
+        ARGS: 
+       run: |${{ github.event.inputs.myValues }}
         chmod +x ./test-script.sh
-        ./test-script.sh ${{ needs.build.outputs.artifact-path }} ${{ github.event.inputs.myValues }}
+        ./test-script.sh ${{ needs.build.outputs.artifact-path }} "$ARGS"
 
   count-args:
     runs-on: ubuntu-latest
